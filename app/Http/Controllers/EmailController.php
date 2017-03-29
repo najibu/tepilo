@@ -8,15 +8,20 @@ class EmailController extends Controller
 {
     protected $lead;
     protected $email;
-    protected $number_of_valuation = 0;
-
+    
     public function lead(Request $request)
     {
       $email = $request->get('email');
 
       if (getLead() && getEmail()) 
       {
+        $customField = new CustomField();
+        $customField->setId(1); 
 
+      } else if (method_exists($this->lead, getLead() && method_exists($this->email, getEmail())) {
+        $this->lead = new Lead();
+
+        $this->lead->getLead()->setEmail($email);
       }
     }
 
@@ -38,6 +43,7 @@ class EmailController extends Controller
   public function setEmail($email) {
     $this->getlead()->setEmail($email);
   }
+
 
   public function getEmail(){
     return $this->email;
